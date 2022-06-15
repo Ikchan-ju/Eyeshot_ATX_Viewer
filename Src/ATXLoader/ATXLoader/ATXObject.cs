@@ -40,21 +40,6 @@ namespace ATXLoader
             codes = new List<string>();
         }
 
-        // hole이 반영된 region을 만든다.
-        //public Region MakeRegionWithHole()
-        //{
-        //    List<ICurve> curves = new List<ICurve>();
-        //    foreach(var g in groups)
-        //    {
-        //        var curve = g.MakeContour();
-        //        if (curve == null)
-        //            continue;
-        //        curves.Add(curve);
-        //    }
-        //    Region region = new Region(curves);
-        //    return region;
-        //}
-
         public override string ToString()
         {
             return name;

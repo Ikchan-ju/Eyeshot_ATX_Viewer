@@ -43,7 +43,7 @@ namespace ATXViewer
             {
                 count = 0;
                 nodeList.Add(new List<BOM>());
-                //nodeList[level] = new List<TreeNode>();
+
                 foreach (var bom in bomData)
                 {
                     if(bom.LEVEL_NO == level)

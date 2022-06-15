@@ -100,11 +100,6 @@ namespace ATXLoader
             var dir = thickness_uvec.ToVector3D();
             try
             {
-                //var sur1 = r.ConvertToSurface();
-                //var sur2 = sur1.Clone() as Surface;
-                //sur2.Translate(dir);
-                //return Brep.Ruled(sur1, sur2, 0.000001);
-                ////return r.ExtrudeAsSolid(dir.Length, 0.1);
                 if (entityAsMesh)
                     ent = r.ExtrudeAsMesh(dir, 0.001, Mesh.natureType.Smooth);
                 else
@@ -112,7 +107,6 @@ namespace ATXLoader
             }
             catch (Exception e)
             {
-                //return r.ExtrudeAsSolid(dir, 0.001);
                 ent = r.ExtrudeAsMesh(dir, 0.001, Mesh.natureType.Smooth);
             }
 

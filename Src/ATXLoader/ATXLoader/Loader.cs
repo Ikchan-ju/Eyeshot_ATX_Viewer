@@ -136,7 +136,6 @@ namespace ATXLoader
         // load 한 element를 model에 객체로 집어 넣는다.
         public void AddToModel(Model model)
         {
-            //model.Entities.Clear();
             foreach(var ele in objects)
             {
                 ATXObject obj = ele as ATXObject;
@@ -145,7 +144,6 @@ namespace ATXLoader
                 if (obj.entities == null)
                     continue;
 
-                //entities.AddRange(obj.entities);
                 model.Entities.AddRange(obj.entities);
             }
 
@@ -166,8 +164,6 @@ namespace ATXLoader
                 {
                     ent.Visible = EmptyType.visible;
                 }
-                //model.Entities.Regen();
-                //model.Invalidate();
             }
         }
 

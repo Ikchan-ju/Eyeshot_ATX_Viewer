@@ -50,7 +50,6 @@ namespace ATXViewer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //model1.ActiveViewport.Camera.ProjectionMode = devDept.Graphics.projectionType.Orthographic;
             model1.WorkCompleted += Model1_WorkCompleted;
             model1.WorkCancelled += Model1_WorkCancelled;
             model1.WorkFailed += Model1_WorkFailed;
@@ -69,7 +68,6 @@ namespace ATXViewer
             {
                 partMenu.CheckedChanged += PartMenu_CheckedChanged;
             }
-            //propertyGrid1.SelectedObject = model1;
         }
 
         private void PartMenu_CheckedChanged(object sender, EventArgs e)
@@ -753,16 +751,6 @@ namespace ATXViewer
                 MakeNewATXFile_asStringList(loaders, out outputStringList); // 각 loader들이 보관하고있는 object & group의 정보들을 하나의 List<string>으로 반환
 
                 SaveAsNewFile(outputStringList, dlg.FileName); // 앞서 합쳐진 List<string>을 atx 파일로 저장
-
-                //List<string> fileNames = new List<string>();
-                //foreach(var loader in loaders)
-                //{
-                //    fileNames.Add(loader.fileName);
-                //}
-
-                //CombineMultipleFilesIntoSingleFile(fileNames.ToArray(), dlg.FileName);
-                //MessageBox.Show($"{loaders.Count}개 파일을 {dlg.FileName}로 저장완료.");
-
             }
         }
 
@@ -827,7 +815,7 @@ namespace ATXViewer
         }
         private static void SaveAsNewFile(List<string> stringBuffer, string outputFilePath)
         {
-            using (StreamWriter outputStream = new StreamWriter(outputFilePath))//(var outputStream = File.Create(outputFilePath))
+            using (StreamWriter outputStream = new StreamWriter(outputFilePath))
             {
                 foreach (string line in stringBuffer)
                 {
@@ -916,7 +904,6 @@ namespace ATXViewer
                     {
                         if (group.start_record_type == RecordTypeManager.RecordType.start_of_hole)
                         {
-                            //obj.groups.Remove(group);
                             group_buffer.Add(group);
                             continue;
                         }
@@ -958,7 +945,6 @@ namespace ATXViewer
                 if (formTree_forCSV == null)
                     formTree_forCSV = new FormObjectTree(dlg.FileName);
 
-                //formTree_forCSV.Regen(loaders);
                 formTree_forCSV.Show();
             }
         }
